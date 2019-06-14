@@ -1,0 +1,17 @@
+doctype html
+html(lang="es")
+	head
+		title Express + Jade
+		meta(charset="utf-8")
+		link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
+		link(href="/static/css/app.css" rel="stylesheet")
+	body
+		nav( class="large-padding black white-text" )
+			ul
+				li 
+					a( href="/app") Inicio
+				li 
+					a( href="/app/imagenes") Mis Imagenes
+				li 
+					a( href="/app/imagenes/new") Nueva Imagen
+		block contenido
