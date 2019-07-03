@@ -1,15 +1,25 @@
 extends ../../layout.jade
+block ptitle
+	title Nueva noticia
+block title
+	h2 Nueva noticia
 block contenido
-	div(class="col-md-6 remove-float center-block big-top-space")
-		h1 Agregar nueva imagen
-		form(action="/app/imagenes", method="POST" enctype="multipart/form-data")
-			div(class="form-group")
-				label(for="title") Titulo
-				input(class="form-control" type="text" name="title" placeholder="Titulo de la imagen" id="title")
-			div(class="form-group")
-				label(for="image") Imagen
-				input(class="form-control" type="file" name="image" id="image")
-			div(class="form-group")
-				div(class="row")
-					div(class="col-xs-12 col-md-6")
+	div(class="card")
+		div(class="card-body")
+			form(action="/app/imagenes/new", method="POST" enctype="multipart/form-data")
+				div(class="row form-group")
+					div(class="col-md-3")
+						label(for="title") Titulo
+					div(class="col-md-9")
+						input(class="form-control" type="text" name="title" placeholder="Titulo de la imagen" id="title")
+				div(class="row form-group")
+					div(class="col-md-3")
+						label(for="image") Imagen
+					div(class="col-md-9")
+						div(class="custom-file")
+							input(class="custom-file-input" type="file" name="image" id="image")
+							label(class="custom-file-label") Selecciona un archivo
+				div(class="row form-group")
+					div(class="col-md-3")
+					div(class="col-md-9 text-right")
 						input(class="btn btn-primary" type="submit" value="Enviar datos")

@@ -1,13 +1,25 @@
 extends ../../layout.jade
+block ptitle
+	title Listado de noticias
+block title
+	h2 Listado de noticias
 block contenido
-	div( class="container")
-		h1 Mis imagenes
-		for img in imagenes
-			.white.border.tr.large-padding
-				.row
-					.col-md-10
-						h2= img.title
-					.col-md-2
-						a( href="/app/imagenes/#{img._id}/edit" class="right-space") Editar
-						form(action="/app/imagenes/#{img._id}?_method=DELETE" class="link" method="POST")
-							input(type="submit" value="Eliminar")
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				table(class="table table-striped table-bordered")
+					thead
+						tr
+							th Titulo
+							th Acciones
+						tbody
+							each img in imagenes
+								tr
+									td #{img.title}
+									td
+										ul
+											li
+												a(href="/app/imagenes/#{img._id}", class="right-space") editar
+											li
+												form(action="/app/imagenes/#{img._id}?_method=DELETE", class="link", method="POST")
+													input(type="submit", value="eliminar")

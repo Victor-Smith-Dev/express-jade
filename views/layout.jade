@@ -1,17 +1,18 @@
 doctype html
 html(lang="es")
 	head
-		title Express + Jade
+		block ptitle
 		meta(charset="utf-8")
 		link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-		link(href="/static/css/app.css" rel="stylesheet")
+		link(href="/css/app.css" rel="stylesheet")
+		script(src="https://use.fontawesome.com/c4b1fab263.js")
+		script(src='/socket.io/socket.io.js')
+		script(src='/js/handlebar.js')
 	body
-		nav( class="large-padding black white-text" )
-			ul
-				li 
-					a( href="/app") Inicio
-				li 
-					a( href="/app/imagenes") Mis Imagenes
-				li 
-					a( href="/app/imagenes/new") Nueva Imagen
-		block contenido
+		include ./static/navbar
+		div(class="container")
+			block title
+			hr
+			p
+				block contenido
+	include ./static/footer

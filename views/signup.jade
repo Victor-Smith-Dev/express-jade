@@ -1,4 +1,11 @@
 extends ./layout.jade
+
+block ptitle
+	title Registrarse
+
+block title
+	h2 Registrarse
+	
 block contenido
 	div(class="col-md-6 remove-float center-block big-top-space")
 		form(action="/users", method="POST")

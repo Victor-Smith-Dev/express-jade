@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost/fotos");
+mongoose.connect("mongodb://localhost/fotos", { useNewUrlParser: true });
 /**
 * creacion del schema para el documento de User
 */

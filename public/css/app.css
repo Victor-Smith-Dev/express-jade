@@ -1,3 +1,7 @@
+nav {
+	margin-bottom: 20px;
+}
+
 .right-space {
 	margin-right: 1em;
 }
@@ -12,7 +16,7 @@
 }
 
 .big-top-space {
-	margin-top: 180px;
+	margin-top: 90px;
 }
 
 .large-padding  {
@@ -73,7 +77,7 @@ img {
 
 .img-container {
 	width: 700px;
-	max-width: 100%
+	max-width: 100%;
 	margin: 0 auto;
 }
 

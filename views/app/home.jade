@@ -1,8 +1,20 @@
 extends ../layout.jade
+block ptitle
+	title Dashboard
+block title
+	h2 Dashboard para #[small(class="text-muted") #[i(class="fa fa-user")] #{user.email}] 
 block contenido
-	div(class="img-container center-block")
+	div(id="images")
 		for image in images
-			h2= image.title
-			img( src="/static/img/#{image._id}.#{image.extension}" class="main-img")
-			if ( typeof image.owner != "undefined")
-				p Por #{ image.owner.email }
+			div(class="img-container")
+				a(href="/app/images/#{image._id}")
+					h2 #{image.title}
+				img( src="/img/#{image._id}.#{image.extension}" class="img-thumbnail main-img")
+				if ( typeof image.owner != "undefined")
+					p Por #{ image.owner.email }
+		script(id="image-template" type="text/x-handlebars-template")
+			div(class="img-container")
+				a(href="/app/images/{{id}}")
+					h2 {{title}}
+				img( src="/img/{{id}}.{{extension}}" class="img-thumbnail main-img")
+		script(src="/js/client.js")

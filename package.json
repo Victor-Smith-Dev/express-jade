@@ -14,8 +14,11 @@
     "express-form-data": "^2.0.8",
     "express-formidable": "^1.2.0",
     "express-session": "^1.16.2",
+    "express-validator": "^5.3.1",
     "jade": "^1.11.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.5.12"
+    "mongoose": "^5.5.12",
+    "redis": "^2.8.0",
+    "socket.io": "^2.2.0"
   }
 }
