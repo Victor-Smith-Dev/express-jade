@@ -12,7 +12,8 @@ html(lang="es")
 		include ./static/navbar
 		div(class="container")
 			block title
-			hr
+			if ( user )
+				hr
 			p
 				block contenido
 	include ./static/footer

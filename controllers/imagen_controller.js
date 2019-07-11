@@ -14,7 +14,7 @@ module.exports.image_home = ( req, res ) => {
 		if ( err ) {
 			res.send(err)
 		} else {
-			
+
 			var vars = {
 				images : doc_images
 			}
@@ -32,8 +32,8 @@ module.exports.image_list = ( req, res ) => {
 		if ( err ) {
 			res.redirect("/app");
 			return;
-		} 
-		
+		}
+
 		var vars = {
 				imagenes : all_img
 		}
@@ -69,17 +69,17 @@ module.exports.image_create = ( req, res, next) => {
 				}
 
 				client.publish('images', JSON.stringify(img_json))
-				fs.rename( req.files.image.path, "public/img/" + img._id + "." + extension, ( err ) => {
+				fs.rename( req.files.image.path, `public/img/${img._id}.${extension}`, ( err ) => {
 					if ( err) {
 							res.send( "ERROR:" + err )
-					} 
+					}
 				});
-				res.redirect("/app/imagenes/" + img._id)
+				res.redirect(`/app/images/${img._id}`)
 			}, ( err ) => {
 				res.send( err )
 			})
 		} ).catch( next )
-	}	
+	}
 }
 /**
 *
@@ -93,7 +93,7 @@ module.exports.image_edit = ( req, res ) => {
 			if ( !err ) {
 				res.render("app/imagenes/show")
 			} else {
-				res.render("app/imagenes/" + rq.params.id + "/edit", vars)					
+				res.render(`app/imagenes/${req.params.id}/edit`)
 			}
 		})
 	}
@@ -104,9 +104,9 @@ module.exports.image_edit = ( req, res ) => {
 module.exports.image_delete = ( req, res ) => {
 	Image.findOneAndDelete({_id : req.params.id }, ( err) => {
 		if ( !err ) {
-			res.redirect("/app/imagenes/");
+			res.redirect("/app/images/");
 		} else {
-			res.redirect("/app/imagenes/" + req.params.id);
+			res.redirect(`/app/images/${req.params.id}`);
 		}
 	});
 }
@@ -116,10 +116,9 @@ module.exports.image_delete = ( req, res ) => {
 exports.validate = ( method ) => {
   switch ( method ) {
     case 'create': {
-     return [ 
+     return [
   		body('title').not().isEmpty().isLength({min: 5}).withMessage('Name must have more than 5 characters')
-       ]   
+       ]
     }
   }
 }
-

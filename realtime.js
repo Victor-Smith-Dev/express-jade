@@ -16,6 +16,6 @@ module.exports = (server, sessionMiddleware) => {
 	})
 	//
 	io.sockets.on( "connection", ( socket ) => {
-		console.log( socket.request.session.user_id )
+		//console.log( socket.request.session.user_id )
 	});
 }

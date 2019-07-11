@@ -28,7 +28,11 @@ Se muestra como manejar archivos en **Node.js** bajo el framework **Express** y 
 
         cd /express-jade
         yarn install
+        
+3. **Crea la carpeta 'img'**: En el directorio /public debes crear una carpeta con nombre 'img' donde se guardarán los archivos que subas a través de la aplicación, el resultado debe ser:
 
-3. **Ejecutar nodemon** Es una dependencia que activa un proceso monitor para node, lo que permite que no tengas que reiniciar el servidor con cada cambio, el comando seria:
+       /express-jade/public/img
+
+4. **Ejecutar nodemon** Es una dependencia que activa un proceso monitor para node, lo que permite que no tengas que reiniciar el servidor con cada cambio, el comando seria:
 
         nodemon app.js

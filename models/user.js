@@ -39,8 +39,8 @@ var user_schema = new Schema({
 			100 , "La edad no puede ser mayores que 100"
 		]
 	},
-	email : { 
-		type:String, 
+	email : {
+		type:String,
 		required:"El correo es obligatorio",
 		match : email_match
 	},
@@ -66,4 +66,4 @@ user_schema.virtual('password_confirmation')
 */
 var User = mongoose.model("User", user_schema);
 
-module.exports.User = User;
+module.exports = User;

@@ -1,15 +1,15 @@
-var User = require("../models/user").User; // se importa el modelo de usuario
+var User = require("../models/user")
 
 module.exports = ( request, response, next) => {
 	if ( !request.session.user_id ) {
-		response.redirect("/login");
+		response.redirect("/auth/login")
 	} else {
 		User.findById( request.session.user_id, ( err, user_doc ) => {
 			if ( err ) {
-				response.redirect("/login");
+				response.redirect("/auth/login")
 			} else {
 				response.locals = { user: user_doc }
-				next();
+				next()
 			}
 		})
 	}
