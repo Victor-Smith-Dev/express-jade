@@ -1,7 +1,8 @@
+var User = require('../models/user')
 
 module.exports.login = ( req, res ) => {
   if ( req.method == 'GET' ) {
-    	res.render("index")
+    	res.render("login")
 	} else {
     var credentials = {
   		email : req.body.email,

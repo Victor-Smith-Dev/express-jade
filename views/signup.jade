@@ -8,7 +8,7 @@ block title
 	
 block contenido
 	div(class="col-md-6 remove-float center-block big-top-space")
-		form(action="/signup", method="POST")
+		form(action="/auth/signup", method="POST")
 			div(class="form-group")
 				label(for="email") Email
 				input(class="form-control" type="text" name="email" placeholder="Ingrese su email" id="email")
@@ -26,4 +26,4 @@ block contenido
 					div(class="col-xs-12 col-md-6")
 						input(class="btn btn-primary" type="submit" value="Enviar datos")
 					div(class="col-xs-12 col-md-6 text-right")
-						a(href="/login") Ya tengo cuenta
+						a(href="/auth/login") Ya tengo cuenta
